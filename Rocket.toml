@@ -1,0 +1,8 @@
+[global.databases.stock_db]
+url = "postgresql://sirc@localhost:5432/stock"
+
+[development]
+template_dir = "static/templates/"
+
+[production]
+template_dir = "static/templates/"
