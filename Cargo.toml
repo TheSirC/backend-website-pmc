@@ -6,7 +6,8 @@ edition = "2018"
 
 [dependencies]
 rocket = "0.4.4"
-diesel = { version = "1.0.0", features = ["postgres"] }
+diesel = { version = "1.4", features = ["postgres", "bigdecimal", "numeric"] }
+bigdecimal = "0.1.2"
 
 [dependencies.rocket_contrib]
 version = "0.4.4"
