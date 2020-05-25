@@ -7,9 +7,12 @@ edition = "2018"
 [dependencies]
 rocket = "0.4.4"
 diesel = { version = "1.4", features = ["postgres", "bigdecimal", "numeric"] }
-bigdecimal = "0.1.2"
+bigdecimal = { version = ">= 0.0.10, <= 0.1.0"}
+paste = "0.1"
+serde = "1.0"
+db_macro = { path = "./db_macro"}
 
 [dependencies.rocket_contrib]
 version = "0.4.4"
 default-features = false
-features = ["serve","tera_templates","diesel_postgres_pool"]
+features = ["serve","tera_templates","diesel_postgres_pool","json"]

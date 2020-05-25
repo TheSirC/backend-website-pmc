@@ -7,6 +7,9 @@ extern crate rocket_contrib;
 #[macro_use]
 extern crate diesel;
 extern crate bigdecimal;
+#[macro_use] extern crate db_macro;
+#[macro_use] extern crate serde;
+#[macro_use] extern crate paste;
 use rocket_contrib::{serve::StaticFiles, templates::Template};
 
 pub mod db;
@@ -25,6 +28,7 @@ fn main() {
             "/stock",
             routes![
                 beamsplitters,
+                filters,
                 leds,
                 lasers,
                 lenses,
