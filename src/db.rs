@@ -1,9 +1,6 @@
 use crate::paste;
 use crate::diesel::PgConnection;
 use crate::diesel::RunQueryDsl;
-use crate::models::{
-    beamsplitters, filters, lasers, leds, lenses, mirrors, polarizers, waveplates,
-};
 use crate::schema;
 
 #[database("stock_db")]
@@ -13,6 +10,7 @@ macro_rules! get_equipment {
     ($($equipment:ident),+) => {
         paste::item! {
         $(
+            use crate::models::$equipment;
             pub fn [<get_ $equipment>](db_connection: &PgConnection) -> Vec<$equipment> {
                 schema::$equipment::table
                     .load::<$equipment>(db_connection)

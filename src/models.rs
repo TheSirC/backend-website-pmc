@@ -1,7 +1,7 @@
 #![allow(non_camel_case_types)]
 use crate::bigdecimal::BigDecimal;
 use crate::diesel::Queryable;
-use serde::{ Serialize, Deserialize };
+use crate::serde::{Serialize,Deserialize};
 use std::ops::Bound;
 
 #[derive(Queryable, Serialize, Deserialize)]

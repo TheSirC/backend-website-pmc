@@ -8,8 +8,8 @@ extern crate rocket_contrib;
 extern crate diesel;
 extern crate bigdecimal;
 #[macro_use] extern crate db_macro;
-#[macro_use] extern crate serde;
-#[macro_use] extern crate paste;
+extern crate serde;
+extern crate paste;
 use rocket_contrib::{serve::StaticFiles, templates::Template};
 
 pub mod db;
