@@ -6,7 +6,6 @@ extern crate rocket;
 extern crate rocket_contrib;
 #[macro_use]
 extern crate diesel;
-extern crate bigdecimal;
 #[macro_use] extern crate db_macro;
 extern crate serde;
 extern crate paste;
@@ -18,8 +17,6 @@ pub mod routes;
 pub mod schema;
 
 use routes::*;
-type Positive_float = diesel::sql_types::Numeric;
-type Positive_float_range = diesel::sql_types::Range<Positive_float>;
 
 fn main() {
     rocket::ignite()

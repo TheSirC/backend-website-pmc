@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 rocket = "0.4.4"
-diesel = { version = "1.4", features = ["postgres", "bigdecimal", "numeric"] }
+diesel = { version = "1.4", features = ["postgres"] }
 bigdecimal = { version = ">= 0.0.10, <= 0.1.0"}
 paste = "0.1"
 serde = "1.0"

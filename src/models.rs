@@ -1,26 +1,25 @@
 #![allow(non_camel_case_types)]
-use crate::bigdecimal::BigDecimal;
 use crate::diesel::Queryable;
 use crate::serde::{Serialize,Deserialize};
-use std::ops::Bound;
 
 #[derive(Queryable, Serialize, Deserialize)]
 pub struct beamsplitters {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
     polarising: Option<bool>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     model_type: Option<String>,
-    arrange: Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_arrange_bound: Option<f32>,
+    upper_arrange_bound: Option<f32>,
     reflectance: Option<i32>,
     transmittance: Option<i32>,
-    thickness: Option<f32>,
+    thickness: Option<f64>,
     id: i32,
 }
 
@@ -33,13 +32,13 @@ pub struct beamsplittertype {
 pub struct filters {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: i32,
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     adjustable: Option<bool>,
     id: i32,
 }
@@ -67,8 +66,8 @@ pub struct leds {
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     color: Option<String>,
     operatingvoltage: Option<f32>,
     operatingcurrent: Option<f32>,
@@ -86,10 +85,11 @@ pub struct lenses {
     mounted: Option<bool>,
     mount_type: Option<String>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     model_type: Option<String>,
-    arrange: Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_arrange_bound: Option<f32>,
+    upper_arrange_bound: Option<f32>,
     focal_length: Option<f32>,
     id: i32,
 }
@@ -123,8 +123,8 @@ pub struct mirrors {
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     id: i32,
 }
 
@@ -137,8 +137,8 @@ pub struct polarizers {
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: Option<i32>,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     model_type: Option<String>,
     id: i32,
 }
@@ -162,10 +162,11 @@ pub struct waveplates {
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: i32,
-    operatingwavelengthrange:
-        Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_operatingwavelengthrange_bound: Option<f32>,
+    upper_operatingwavelengthrange_bound: Option<f32>,
     model_type: Option<String>,
-    arrange: Option<(Bound<bigdecimal::BigDecimal>, Bound<bigdecimal::BigDecimal>)>,
+    lower_arrange_bound: Option<f32>,
+    upper_arrange_bound: Option<f32>,
     id: i32,
 }
 
