@@ -9,7 +9,7 @@ rocket = "0.4.4"
 diesel = { version = "1.4", features = ["postgres"] }
 bigdecimal = { version = ">= 0.0.10, <= 0.1.0"}
 paste = "0.1"
-serde = "1.0"
+serde = {version = "1.0", features = ["derive"]}
 db_macro = { path = "./db_macro"}
 
 [dependencies.rocket_contrib]

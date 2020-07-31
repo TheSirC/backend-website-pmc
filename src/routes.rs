@@ -1,7 +1,12 @@
 use crate::db_macro::stock_route;
 use crate::db::{MyPgDatabase};
-use rocket_contrib::{json::Json, templates::Template };
+use rocket_contrib::templates::Template;
+use serde::Serialize;
 
+#[derive(Serialize)]
+struct database_response<T: Serialize> {
+   rows: T
+}
 
 stock_route!(
     leds,

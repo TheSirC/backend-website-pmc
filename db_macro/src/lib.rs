@@ -18,7 +18,7 @@ pub fn stock_route(input: TokenStream) -> TokenStream {
                 use crate::db::#get_name;
                 #[get(#route)]
                 pub fn #equipment(db_connection: MyPgDatabase) -> Template {
-                    Template::render(#template_name,Json(#get_name))
+                    Template::render(#template_name,database_response{rows:#get_name(&db_connection)})
                 }
     };
     generated_code.push(code.into());
