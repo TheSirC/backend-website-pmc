@@ -3,7 +3,7 @@ table! {
     beamsplitters (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
@@ -16,7 +16,7 @@ table! {
         upper_arrange_bound -> Nullable<Float>,
         reflectance -> Nullable<Int4>,
         transmittance -> Nullable<Int4>,
-        thickness -> Nullable<Float>,
+        thickness -> Nullable<Double>,
         id -> Int4,
     }
 }
@@ -32,7 +32,7 @@ table! {
     filters (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Int4,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
@@ -52,28 +52,28 @@ table! {
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
         localisation -> Int4,
-        maxpower -> Nullable<Float>,
-        voltage -> Nullable<Float>,
-        wavelength -> Nullable<Float>,
+        maxpower -> Nullable<Double>,
+        voltage -> Nullable<Double>,
+        wavelength -> Nullable<Double>,
         id -> Int4,
     }
 }
 
 table! {
-use crate::Positive_float_range;
     use diesel::sql_types::*;
     leds (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
         localisation -> Int4,
-        operatingwavelengthrange -> Nullable<Positive_float_range>,
+        lower_operatingwavelengthrange_bound -> Nullable<Float>,
+        upper_operatingwavelengthrange_bound -> Nullable<Float>,
         color -> Nullable<Text>,
-        operatingvoltage -> Nullable<Float>,
-        operatingcurrent -> Nullable<Float>,
+        operatingvoltage -> Nullable<Double>,
+        operatingcurrent -> Nullable<Double>,
         maxpower -> Nullable<Float>,
         id -> Int4,
     }
@@ -84,7 +84,7 @@ table! {
     lenses (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
@@ -131,7 +131,7 @@ table! {
     mirrors (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
@@ -147,7 +147,7 @@ table! {
     polarizers (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,
@@ -172,11 +172,12 @@ table! {
 }
 
 table! {
+
     use diesel::sql_types::*;
     waveplates (id) {
         manufacturer -> Nullable<Text>,
         model -> Nullable<Text>,
-        diameter -> Nullable<Float>,
+        diameter -> Nullable<Double>,
         quantity -> Nullable<Int4>,
         shape -> Nullable<Text>,
         mounted -> Nullable<Bool>,

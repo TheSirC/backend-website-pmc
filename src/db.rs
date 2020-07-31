@@ -14,7 +14,7 @@ macro_rules! get_equipment {
             pub fn [<get_ $equipment>](db_connection: &PgConnection) -> Vec<$equipment> {
                 schema::$equipment::table
                     .load::<$equipment>(db_connection)
-                    .expect("The call to the database did not go well")
+                    .expect("The call to the database for the equipment table did not go well")
             }
         )+
         }

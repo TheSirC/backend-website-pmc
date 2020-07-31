@@ -51,9 +51,9 @@ pub struct lasers {
     shape: Option<String>,
     mounted: Option<bool>,
     localisation: i32,
-    maxpower: Option<f32>,
-    voltage: Option<f32>,
-    wavelength: Option<f32>,
+    maxpower: Option<f64>,
+    voltage: Option<f64>,
+    wavelength: Option<f64>,
     id: i32,
 }
 
@@ -61,7 +61,7 @@ pub struct lasers {
 pub struct leds {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
@@ -69,8 +69,8 @@ pub struct leds {
     lower_operatingwavelengthrange_bound: Option<f32>,
     upper_operatingwavelengthrange_bound: Option<f32>,
     color: Option<String>,
-    operatingvoltage: Option<f32>,
-    operatingcurrent: Option<f32>,
+    operatingvoltage: Option<f64>,
+    operatingcurrent: Option<f64>,
     maxpower: Option<f32>,
     id: i32,
 }
@@ -79,7 +79,7 @@ pub struct leds {
 pub struct lenses {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
@@ -118,7 +118,7 @@ pub struct manufacturers {
 pub struct mirrors {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
@@ -132,7 +132,7 @@ pub struct mirrors {
 pub struct polarizers {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
@@ -157,7 +157,7 @@ pub struct shapes {
 pub struct waveplates {
     manufacturer: Option<String>,
     model: Option<String>,
-    diameter: Option<f32>,
+    diameter: Option<f64>,
     quantity: Option<i32>,
     shape: Option<String>,
     mounted: Option<bool>,
