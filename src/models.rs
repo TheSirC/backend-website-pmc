@@ -106,7 +106,9 @@ pub struct lenstype {
 
 #[derive(Queryable, Serialize, Deserialize)]
 pub struct localisations {
-    name: String,
+    id: i32,
+    localisation: Option<String>,
+    experimenter: Option<String>,
 }
 
 #[derive(Queryable, Serialize, Deserialize)]
