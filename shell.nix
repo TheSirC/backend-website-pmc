@@ -6,7 +6,7 @@ let
   shellHook = builtins.readFile ./.shell.sh;
 in
 mkShell {
-  buildInputs = [ pgcli postgresql_11 inotify-tools ];
+  buildInputs = [ pgcli postgresql_11 inotify-tools diesel-cli];
   shellHook = ''
             ${shellHook}
   '';
