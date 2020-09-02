@@ -5,4 +5,4 @@ url = "postgresql://sirc@localhost:5432/stock"
 template_dir = "static/templates/"
 
 [production]
-template_dir = "static/templates/"
+template_dir = "./static/templates/"

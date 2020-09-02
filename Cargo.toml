@@ -5,7 +5,7 @@ authors = ["TheSirC <clocloranely@hotmail.fr>"]
 edition = "2018"
 
 [dependencies]
-rocket = "0.5"
+rocket = "0.4.5"
 diesel = { version = "1.4", features = ["postgres"] }
 paste = "0.1"
 serde = {version = "1.0", features = ["derive"]}

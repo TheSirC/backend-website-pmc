@@ -9,7 +9,8 @@ extern crate diesel;
 #[macro_use] extern crate db_macro;
 extern crate serde;
 extern crate paste;
-use rocket_contrib::{serve::StaticFiles, templates::Template};
+use rocket_contrib::{serve::{StaticFiles,Options}, templates::Template};
+use std::path::{Path, PathBuf};
 
 pub mod db;
 pub mod models;
@@ -20,7 +21,7 @@ use routes::*;
 
 fn main() {
     rocket::ignite()
-        .mount("/", StaticFiles::from("static"))
+        .mount("/", StaticFiles::new("static", Options::NormalizeDirs))
         .mount(
             "/stock",
             routes![
