@@ -21,7 +21,7 @@ use routes::*;
 
 fn main() {
     rocket::ignite()
-        .mount("/", StaticFiles::new("static", Options::NormalizeDirs))
+        .mount("/", StaticFiles::new("./static", Options::NormalizeDirs))
         .mount(
             "/stock",
             routes![
