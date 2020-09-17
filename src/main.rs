@@ -20,7 +20,7 @@ pub mod schema;
 use routes::*;
 
 fn main() {
-let index_path = env::args().nth(1).unwrap_or("/home/carvd/stock-website/result/static");
+let index_path = env::args().nth(1).unwrap_or("/home/carvd/stock-website/result/static".to_string());
     rocket::ignite()
         .mount("/", StaticFiles::from(index_path))
         .mount(
