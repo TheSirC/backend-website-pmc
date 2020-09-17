@@ -20,7 +20,7 @@ use routes::*;
 
 fn main() {
     rocket::ignite()
-        .mount("/", StaticFiles::from(env!(STOCK_WEBSITE_STATIC)))
+        .mount("/", StaticFiles::from(env!("STOCK_WEBSITE_STATIC")))
         .mount(
             "/stock",
             routes![
