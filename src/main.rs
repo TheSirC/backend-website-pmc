@@ -20,7 +20,7 @@ use routes::*;
 
 fn main() {
     rocket::ignite()
-        .mount("/", StaticFiles::new("/home/carvd/stock-website/result/static", Options::NormalizeDirs))
+        .mount("/", StaticFiles::new("/home/carvd/stock-website/result/static", Options::Index))
         .mount(
             "/stock",
             routes![
