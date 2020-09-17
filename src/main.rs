@@ -10,7 +10,6 @@ extern crate diesel;
 extern crate serde;
 extern crate paste;
 use rocket_contrib::{serve::{StaticFiles,Options}, templates::Template};
-use std::path::{Path, PathBuf};
 
 pub mod db;
 pub mod models;
@@ -21,7 +20,7 @@ use routes::*;
 
 fn main() {
     rocket::ignite()
-        .mount("/", StaticFiles::new("./static", Options::NormalizeDirs))
+        .mount("/", StaticFiles::new("/home/carvd/stock-website/result/static", Options::NormalizeDirs))
         .mount(
             "/stock",
             routes![
